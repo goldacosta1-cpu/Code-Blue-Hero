@@ -8,8 +8,26 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    enum Pages: String {
+        case code
+    }
+    
+    @State private var selectedTab: Pages = .code
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        TabView(selection: $selectedTab) {
+            Tab(value: .code) {
+                CodeView()
+            } label: {
+                Label {
+                    Text(Pages.code.rawValue.capitalized)
+                } icon: {
+                    Image(.heartBeat)
+                }
+            }
+        }
+        .tabBarMinimizeBehavior(.onScrollDown)
     }
 }
 
