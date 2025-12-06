@@ -11,7 +11,7 @@ import SwiftUI
 struct CodeBlueHeroApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            HomeView()
         }
     }
 }
