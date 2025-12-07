@@ -6,10 +6,24 @@
 //
 
 import SwiftUI
+import Combine
 
 struct CodeView: View {
+    
+    @State private var currentDate = Date.now
+    @State private var timeElapsed = 0
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationStack {
+            VStack {
+                Text("\(timeElapsed)")
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onReceive(timer) { date in
+                timeElapsed = Int(date.timeIntervalSince(currentDate))
+            }
+        }
     }
 }
 
