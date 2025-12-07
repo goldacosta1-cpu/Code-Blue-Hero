@@ -18,7 +18,18 @@ struct CodeView: View {
         NavigationStack {
             VStack {
                 Text("\(timeElapsed)")
-                    .fontWeight(.semibold)
+                    .font(.system(size: 20))
+                    .bold()
+                // Share Timer
+                HStack {
+                    Image(systemName: "square.and.arrow.up")
+                        .foregroundStyle(.white)
+                    Text("Share Timer")
+                        .foregroundStyle(.white)
+                }
+                .padding()
+                .background(.backgroundBlue)
+                .clipShape(Capsule())
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
