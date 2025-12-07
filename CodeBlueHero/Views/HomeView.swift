@@ -11,6 +11,7 @@ struct HomeView: View {
     
     enum Pages: String {
         case code
+        case settings
     }
     
     @State private var selectedTab: Pages = .code
@@ -24,6 +25,15 @@ struct HomeView: View {
                     Text(Pages.code.rawValue.capitalized)
                 } icon: {
                     Image(.heartBeat)
+                }
+            }
+            Tab(value: .settings) {
+                SettingsView()
+            } label: {
+                Label {
+                    Text(Pages.settings.rawValue.capitalized)
+                } icon: {
+                    Image(systemName: "gear")
                 }
             }
         }
