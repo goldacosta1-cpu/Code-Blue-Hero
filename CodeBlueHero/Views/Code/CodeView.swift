@@ -12,14 +12,23 @@ struct CodeView: View {
     
     @State private var currentDate = Date.now
     @State private var timeElapsed = 0
-    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private var formattedTimerString: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.minute, .second]
+        formatter.unitsStyle = .positional
+        formatter.zeroFormattingBehavior = .pad
+        return formatter.string(from: TimeInterval(timeElapsed)) ?? "00:00"
+    }
     
     var body: some View {
         NavigationStack {
             VStack {
-                Text("\(timeElapsed)")
-                    .font(.system(size: 20))
+                Text(formattedTimerString)
+                    .font(.system(size: 40))
+                    .monospacedDigit()
                     .bold()
+                    .padding(.top, 16)
                 // Share Timer
                 Button {
                     
