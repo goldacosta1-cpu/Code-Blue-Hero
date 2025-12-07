@@ -62,6 +62,9 @@ struct CodeView: View {
                     .padding(24)
                     .background(.backgroundGreen500)
                     .clipShape(RoundedRectangle(cornerRadius: 24))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGreen600), lineWidth: 4)
+                    }
                 }
                 Spacer()
             }
