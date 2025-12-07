@@ -66,6 +66,7 @@ struct CodeView: View {
                         RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGreen600), lineWidth: 4)
                     }
                 }
+                // Next Action
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)

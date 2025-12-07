@@ -28,6 +28,21 @@ struct HomeView: View {
             }
         }
         .tabBarMinimizeBehavior(.onScrollDown)
+        .tabViewBottomAccessory {
+            VStack {
+                Text("NEXT ACTION")
+                    .font(.system(size: 12))
+                    .foregroundStyle(.textGray)
+                Text("Start CPR")
+                    .font(.system(size: 14))
+                    .foregroundStyle(.textBlue700)
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            .background(.backgroundBlue50)
+            .overlay {
+                Capsule().stroke(Color(.borderBlue400), lineWidth: 2)
+            }
+        }
     }
 }
 
