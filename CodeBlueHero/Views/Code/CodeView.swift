@@ -49,13 +49,14 @@ struct CodeView: View {
                 } label: {
                     VStack(spacing: 8) {
                         Image(systemName: "timer.circle.fill")
+                            .resizable()
                             .frame(width: 40, height: 40)
                             .foregroundStyle(.white)
                         Text("START CPR CYCLE")
-                            .font(.system(size: 35))
+                            .font(.system(size: 24))
                             .foregroundStyle(.white)
                         Text("Tap to begin 2-minute timer")
-                            .font(.system(size: 12))
+                            .font(.system(size: 14))
                             .foregroundStyle(.white)
                     }
                     .frame(maxWidth: .infinity)
