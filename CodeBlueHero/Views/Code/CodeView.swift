@@ -18,6 +18,8 @@ struct CodeView: View {
         NavigationStack {
             VStack {
                 Text("\(timeElapsed)")
+                    .fontWeight(.semibold)
+                Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
             .onReceive(timer) { date in
