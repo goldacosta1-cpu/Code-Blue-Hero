@@ -24,11 +24,15 @@ struct CodeView: View {
     var body: some View {
         NavigationStack {
             VStack {
+                Text("CODE TIME")
+                    .font(.system(size: 12))
+                    .foregroundStyle(.textGray)
+                    .fontWeight(.semibold)
+                    .padding(.top, 16)
                 Text(formattedTimerString)
                     .font(.system(size: 40))
                     .monospacedDigit()
                     .bold()
-                    .padding(.top, 16)
                 // Share Timer
                 Button {
                     
@@ -39,7 +43,8 @@ struct CodeView: View {
                         Text("Share Timer")
                             .foregroundStyle(.white)
                     }
-                    .padding()
+                    .padding(.vertical, 12)
+                    .padding(.horizontal, 24)
                     .background(.backgroundBlue)
                     .clipShape(Capsule())
                 }
