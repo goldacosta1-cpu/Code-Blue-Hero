@@ -72,7 +72,24 @@ struct CodeView: View {
                         RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGreen600), lineWidth: 4)
                     }
                 }
-                // Next Action
+                // First Epi Dose & Time Since Shock
+                HStack {
+                    VStack {
+                        Image(systemName: "pill")
+                            .resizable()
+                            .frame(width: 28, height: 28)
+                        Text("FIRST EPI DOSE")
+                            .foregroundStyle(.textGray)
+                            .font(.system(size: 12))
+                        Text("Not Due Yet")
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(16)
+                    .clipShape(RoundedRectangle(cornerRadius: 24))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
+                    }
+                }
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
