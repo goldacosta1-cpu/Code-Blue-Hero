@@ -14,6 +14,7 @@ struct HomeView: View {
         case settings
     }
     
+    @State private var codeObservable = CodeObservable()
     @State private var selectedTab: Pages = .code
     
     var body: some View {
@@ -37,8 +38,17 @@ struct HomeView: View {
                 }
             }
         }
+        .task(id: selectedTab) {
+            withAnimation {
+                if selectedTab == .code {
+                    codeObservable.enableTabAccessory = true
+                } else {
+                    codeObservable.enableTabAccessory = false
+                }
+            }
+        }
         .tabBarMinimizeBehavior(.onScrollDown)
-        .tabViewBottomAccessory {
+        .tabViewBottomAccessory(isEnabled: codeObservable.enableTabAccessory) {
             VStack {
                 Text("NEXT ACTION")
                     .font(.system(size: 12))
