@@ -74,7 +74,7 @@ struct CodeView: View {
                 }
                 // First Epi Dose & Time Since Shock
                 HStack {
-                    VStack {
+                    VStack(spacing: 8) {
                         Image(systemName: "pill")
                             .resizable()
                             .frame(width: 28, height: 28)
@@ -82,9 +82,27 @@ struct CodeView: View {
                             .foregroundStyle(.textGray)
                             .font(.system(size: 12))
                         Text("Not Due Yet")
+                            .font(.system(size: 18))
+                            .foregroundStyle(.textGray)
                     }
-                    .frame(maxWidth: .infinity)
+                    .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100)
                     .padding(16)
+                    .clipShape(RoundedRectangle(cornerRadius: 24))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
+                    }
+                    VStack {
+                        VStack(spacing: 8) {
+                            Image(systemName: "bolt.fill")
+                            Text("TIME SINCE SHOCK")
+                                .foregroundStyle(.textGray)
+                                .foregroundStyle(.textGray)
+                                .font(.system(size: 12))
+                        }
+                        .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+                        .padding(16)
+                    }
+                    .background(.backgroundGray100)
                     .clipShape(RoundedRectangle(cornerRadius: 24))
                     .overlay {
                         RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
