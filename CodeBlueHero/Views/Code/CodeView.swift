@@ -108,16 +108,21 @@ struct CodeView: View {
                         RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
                     }
                 }
-                // Rhythem Check
+                // Rhythm Check
                 VStack {
                     HStack {
                         Image(.pulse)
                             .resizable()
                             .frame(width: 24, height: 24)
                             .foregroundStyle(.textGray)
+                        Text("RHYTHM CHECK")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.textGray600)
                     }
+                    .frame(maxWidth: .infinity, alignment: .leading)
                 }
                 .frame(maxWidth: .infinity)
+                .padding(16)
                 .background(.backgroundGray100)
                 .clipShape(RoundedRectangle(cornerRadius: 24))
                 .overlay {
