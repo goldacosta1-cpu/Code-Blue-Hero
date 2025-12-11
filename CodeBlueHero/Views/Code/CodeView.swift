@@ -199,6 +199,21 @@ struct CodeView: View {
                     .overlay {
                         RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
                     }
+                    // ACLS Protocol
+                    VStack {
+                        Text("📋 ACLS PROTOCOL")
+                            .font(.system(size: 12))
+                            .bold()
+                            .foregroundStyle(.textBlue700)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                    }
+                    .frame(maxWidth: .infinity)
+                    .padding(20)
+                    .background(.backgroundBlue50)
+                    .clipShape(RoundedRectangle(cornerRadius: 24))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 24).stroke(Color(.borderBlue300), lineWidth: 2)
+                    }
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
