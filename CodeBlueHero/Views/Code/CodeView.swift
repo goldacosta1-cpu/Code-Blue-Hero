@@ -120,6 +120,40 @@ struct CodeView: View {
                             .foregroundStyle(.textGray600)
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
+                    Text("SHOCKABLE RHYTHMS")
+                        .font(.system(size: 12))
+                        .foregroundStyle(.textOrange600)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Text("VF")
+                                .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
+                                .background(.backgroundRed500)
+                                .foregroundStyle(.white)
+                                .font(.system(size: 14))
+                                .bold()
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 16).stroke(Color(.borderRed600), lineWidth: 2)
+                                }
+                        }
+                        Button {
+                            
+                        } label: {
+                            Text("VTach")
+                                .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
+                                .background(.backgroundRed500)
+                                .foregroundStyle(.white)
+                                .font(.system(size: 14))
+                                .bold()
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 16).stroke(Color(.borderRed600), lineWidth: 2)
+                                }
+                        }
+                    }
                 }
                 .frame(maxWidth: .infinity)
                 .padding(16)
