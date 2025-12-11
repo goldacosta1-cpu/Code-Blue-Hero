@@ -122,6 +122,7 @@ struct CodeView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     Text("SHOCKABLE RHYTHMS")
                         .font(.system(size: 12))
+                        .bold()
                         .foregroundStyle(.textOrange600)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     HStack {
@@ -151,6 +152,41 @@ struct CodeView: View {
                                 .clipShape(RoundedRectangle(cornerRadius: 16))
                                 .overlay {
                                     RoundedRectangle(cornerRadius: 16).stroke(Color(.borderRed600), lineWidth: 2)
+                                }
+                        }
+                    }
+                    Text("NON-SHOCKABLE RHYTHMS")
+                        .foregroundStyle(.textBlue600)
+                        .font(.system(size: 12))
+                        .bold()
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    HStack {
+                        Button {
+                            
+                        } label: {
+                            Text("PEA")
+                                .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
+                                .background(.backgroundGray300)
+                                .foregroundStyle(.textGray900)
+                                .font(.system(size: 14))
+                                .bold()
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 16).stroke(Color(.borderGray400), lineWidth: 2)
+                                }
+                        }
+                        Button {
+                            
+                        } label: {
+                            Text("Asystole")
+                                .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
+                                .background(.backgroundGray300)
+                                .foregroundStyle(.textGray900)
+                                .font(.system(size: 14))
+                                .bold()
+                                .clipShape(RoundedRectangle(cornerRadius: 16))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 16).stroke(Color(.borderGray400), lineWidth: 2)
                                 }
                         }
                     }
