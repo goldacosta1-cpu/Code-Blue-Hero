@@ -47,7 +47,7 @@ struct HomeView: View {
                 }
             }
         }
-        .tabBarMinimizeBehavior(.onScrollUp)
+        .tabBarMinimizeBehavior(.onScrollDown)
         .tabViewBottomAccessory(isEnabled: codeObservable.enableTabAccessory) {
             VStack {
                 Text("NEXT ACTION")

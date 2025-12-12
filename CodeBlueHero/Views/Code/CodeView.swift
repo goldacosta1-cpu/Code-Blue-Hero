@@ -12,6 +12,7 @@ struct CodeView: View {
     
     @State private var currentDate = Date.now
     @State private var timeElapsed = 0
+    @State private var isRecentEventsExpanded = true
     @State private var codeObservable = CodeObservable()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
@@ -356,6 +357,34 @@ struct CodeView: View {
                             }
                         }
                     } // end of action buttons
+                    // recent events
+                    List {
+                        Section(isExpanded: $isRecentEventsExpanded) {
+                            Text("Code started")
+                                .font(.system(size: 12))
+                                .foregroundStyle(.textBlue700)
+                            Text("Code started")
+                                .font(.system(size: 12))
+                                .foregroundStyle(.textBlue700)
+                        } header: {
+                            HStack {
+                                Text("Recent Events")
+                                    .foregroundStyle(.textGray900)
+                                    .bold()
+                                Spacer()
+                                Button {
+                                    withAnimation {
+                                        isRecentEventsExpanded.toggle()
+                                    }
+                                } label: {
+                                    Image(systemName: "chevron.right")
+                                        .rotationEffect(!isRecentEventsExpanded ? Angle(degrees: 0) : Angle(degrees: 90))
+                                }
+                            }
+                        }
+                    }
+                    .frame(maxWidth: .infinity, minHeight: 200, maxHeight: .infinity)
+                    .clipShape(RoundedRectangle(cornerRadius: 24))
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
