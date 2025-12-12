@@ -400,7 +400,6 @@ struct CodeView: View {
                             } label: {
                                 Text("Save")
                             }
-                            .tint(.green)
                             Button {
                                 
                             } label: {
