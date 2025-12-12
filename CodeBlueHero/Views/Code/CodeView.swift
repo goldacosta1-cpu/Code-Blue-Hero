@@ -12,6 +12,7 @@ struct CodeView: View {
     
     @State private var currentDate = Date.now
     @State private var timeElapsed = 0
+    @State private var codeObservable = CodeObservable()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
         let formatter = DateComponentsFormatter()
@@ -200,12 +201,15 @@ struct CodeView: View {
                         RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
                     }
                     // ACLS Protocol
-                    VStack {
+                    VStack(spacing: 12) {
                         Text("📋 ACLS PROTOCOL")
                             .font(.system(size: 12))
                             .bold()
                             .foregroundStyle(.textBlue700)
                             .frame(maxWidth: .infinity, alignment: .leading)
+                        Text(codeObservable.cprStatus.rawValue)
+                            .foregroundStyle(.textBlue800)
+                            .font(.system(size: 12))
                     }
                     .frame(maxWidth: .infinity)
                     .padding(20)
