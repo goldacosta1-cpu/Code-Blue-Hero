@@ -218,6 +218,18 @@ struct CodeView: View {
                     .overlay {
                         RoundedRectangle(cornerRadius: 24).stroke(Color(.borderBlue300), lineWidth: 2)
                     }
+                    // Continuous Reminders
+                    VStack {
+                        Text("Minimize compression interruptions • IV/IO access should be verified • Consider advanced airway")
+                            .foregroundStyle(.textGray600)
+                            .font(.system(size: 12))
+                            .padding(16)
+                    }
+                    .background(.backgroundGray100)
+                    .clipShape(RoundedRectangle(cornerRadius: 16))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 16).stroke(Color(.borderGray200), lineWidth: 2)
+                    }
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
