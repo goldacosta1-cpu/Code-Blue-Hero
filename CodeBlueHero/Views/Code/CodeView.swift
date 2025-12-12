@@ -398,6 +398,7 @@ struct CodeView: View {
                     }
                 }
             }
+            .background(.backgroundGray50)
         }
     }
 }
