@@ -273,7 +273,48 @@ struct CodeView: View {
                                 }
                             }
                         }
-                    }
+                        // medications, pulse
+                        HStack {
+                            Button {
+                            } label: {
+                                VStack {
+                                    Image(.ActionButtons.medications)
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                    Text("Medications")
+                                        .font(.system(size: 18))
+                                        .foregroundStyle(.textGray900)
+                                        .bold()
+                                }
+                                .frame(maxWidth: .infinity, minHeight: 90, maxHeight: 90)
+                                .padding(16)
+                                .clipShape(RoundedRectangle(cornerRadius: 24))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 24).stroke(Color(.borderOrange400), lineWidth: 2)
+                                }
+                            }
+                            Button {
+                                
+                            } label: {
+                                VStack {
+                                    Image(.ActionButtons.pulse)
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                        .foregroundStyle(.fluid)
+                                    Text("Pulse")
+                                        .font(.system(size: 18))
+                                        .foregroundStyle(.textGray900)
+                                        .bold()
+                                }
+                                .frame(maxWidth: .infinity, minHeight: 90, maxHeight: 90)
+                                .padding(16)
+                                .clipShape(RoundedRectangle(cornerRadius: 24))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 24).stroke(Color(.borderBlue400), lineWidth: 2)
+                                }
+                            }
+                        }
+                    } // end of action buttons
                     Spacer()
                 }
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
