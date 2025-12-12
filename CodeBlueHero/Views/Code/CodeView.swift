@@ -363,6 +363,40 @@ struct CodeView: View {
                 .onReceive(timer) { date in
                     timeElapsed = Int(date.timeIntervalSince(currentDate))
                 }
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        Menu {
+                            Button {
+                                
+                            } label: {
+                                Text("Save")
+                            }
+                            .tint(.green)
+                            Button {
+                                
+                            } label: {
+                                Text("Undo")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Text("Log")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Text("End")
+                            }
+                            Button {
+                                
+                            } label: {
+                                Text("New")
+                            }
+                        } label: {
+                            Image(systemName: "line.3.horizontal.decrease")
+                        }
+                    }
+                }
             }
         }
     }
