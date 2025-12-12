@@ -220,6 +220,7 @@ struct CodeView: View {
                     }
                     // Continuous Reminders
                     VStack {
+                        // This value is dynamic
                         Text("Minimize compression interruptions • IV/IO access should be verified • Consider advanced airway")
                             .foregroundStyle(.textGray600)
                             .font(.system(size: 12))
@@ -229,6 +230,49 @@ struct CodeView: View {
                     .clipShape(RoundedRectangle(cornerRadius: 16))
                     .overlay {
                         RoundedRectangle(cornerRadius: 16).stroke(Color(.borderGray200), lineWidth: 2)
+                    }
+                    // Action Buttons
+                    VStack {
+                        HStack {
+                            Button {
+                            } label: {
+                                VStack {
+                                    Image(.ActionButtons.amio)
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                    Text("Amio")
+                                        .font(.system(size: 18))
+                                        .foregroundStyle(.textGray900)
+                                        .bold()
+                                }
+                                .frame(maxWidth: .infinity, minHeight: 90, maxHeight: 90)
+                                .padding(16)
+                                .clipShape(RoundedRectangle(cornerRadius: 24))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 24).stroke(Color(.borderPurple400), lineWidth: 2)
+                                }
+                            }
+                            Button {
+                                
+                            } label: {
+                                VStack {
+                                    Image(.ActionButtons.ivFluids)
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                        .foregroundStyle(.fluid)
+                                    Text("IV Fluids")
+                                        .font(.system(size: 18))
+                                        .foregroundStyle(.textGray900)
+                                        .bold()
+                                }
+                                .frame(maxWidth: .infinity, minHeight: 90, maxHeight: 90)
+                                .padding(16)
+                                .clipShape(RoundedRectangle(cornerRadius: 24))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 24).stroke(Color(.borderBlue400), lineWidth: 2)
+                                }
+                            }
+                        }
                     }
                     Spacer()
                 }
