@@ -314,6 +314,47 @@ struct CodeView: View {
                                 }
                             }
                         }
+                        // Airway, ROSC
+                        HStack {
+                            Button {
+                            } label: {
+                                VStack {
+                                    Image(.ActionButtons.airway)
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                    Text("Airway")
+                                        .font(.system(size: 18))
+                                        .foregroundStyle(.textGray900)
+                                        .bold()
+                                }
+                                .frame(maxWidth: .infinity, minHeight: 90, maxHeight: 90)
+                                .padding(16)
+                                .clipShape(RoundedRectangle(cornerRadius: 24))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 24).stroke(Color(.borderTeal400), lineWidth: 2)
+                                }
+                            }
+                            Button {
+                                
+                            } label: {
+                                VStack {
+                                    Image(.ActionButtons.ROSC)
+                                        .resizable()
+                                        .frame(width: 32, height: 32)
+                                        .foregroundStyle(.fluid)
+                                    Text("ROSC")
+                                        .font(.system(size: 18))
+                                        .foregroundStyle(.textGray900)
+                                        .bold()
+                                }
+                                .frame(maxWidth: .infinity, minHeight: 90, maxHeight: 90)
+                                .padding(16)
+                                .clipShape(RoundedRectangle(cornerRadius: 24))
+                                .overlay {
+                                    RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGreen400), lineWidth: 2)
+                                }
+                            }
+                        }
                     } // end of action buttons
                     Spacer()
                 }
