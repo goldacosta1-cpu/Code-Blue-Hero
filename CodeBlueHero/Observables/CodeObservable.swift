@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @Observable
 class CodeObservable {
@@ -16,4 +17,10 @@ class CodeObservable {
     
     var enableTabAccessory = false
     var cprStatus: CprStatus = .started
+    
+    func saveLog(title: String, modelContext: ModelContext) async throws {
+        let codeLog = CodeLog(id: UUID().uuidString, title: title, startDate: .now)
+        modelContext.insert(codeLog)
+        try modelContext.save()
+    }
 }

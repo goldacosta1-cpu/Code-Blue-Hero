@@ -9,6 +9,8 @@ import SwiftUI
 
 struct RecentEventsRowView: View {
     
+    var codeLog: CodeLog
+    
     var body: some View {
         HStack(spacing: 12) {
             Text("12:44:24")
@@ -18,15 +20,11 @@ struct RecentEventsRowView: View {
                 .background(.backgroundBlue50)
                 .font(.system(size: 12))
                 .clipShape(Capsule())
-            Text("Code started")
+            Text(codeLog.title)
                 .font(.system(size: 12))
                 .foregroundStyle(.textBlue700)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
-}
-
-#Preview {
-    RecentEventsRowView()
 }

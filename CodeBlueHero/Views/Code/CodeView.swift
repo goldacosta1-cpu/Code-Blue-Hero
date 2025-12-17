@@ -6,10 +6,12 @@
 //
 
 import SwiftUI
+import SwiftData
 import Combine
 
 struct CodeView: View {
     
+    @Query private var codeLog: [CodeLog]
     @State private var currentDate = Date.now
     @State private var timeElapsed = 0
     @State private var isRecentEventsExpanded = true
@@ -360,8 +362,9 @@ struct CodeView: View {
                     // recent events
                     List {
                         Section(isExpanded: $isRecentEventsExpanded) {
-                            RecentEventsRowView()
-                            RecentEventsRowView()
+                            ForEach(codeLog) { codeLog in
+                                RecentEventsRowView(codeLog: codeLog)
+                            }
                         } header: {
                             HStack {
                                 Text("Recent Events")
