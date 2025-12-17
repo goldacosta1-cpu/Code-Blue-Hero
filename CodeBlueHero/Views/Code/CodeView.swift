@@ -85,6 +85,35 @@ struct CodeView: View {
                         }
                     } else {
                         // CPR Started
+                        HStack {
+                            VStack {
+                                Text("CODE TIME")
+                                    .fontWeight(.semibold)
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(.textGray400)
+                                Text(formattedTimerString)
+                                    .font(.system(size: 24))
+                                    .fontWeight(.semibold)
+                                    .foregroundStyle(.textGray600)
+                                    .monospacedDigit()
+                                    .bold()
+                            }
+                            // Share Timer
+                            Button {
+                                
+                            } label: {
+                                HStack {
+                                    Image(systemName: "square.and.arrow.up")
+                                        .foregroundStyle(.white)
+                                    Text("Share Timer")
+                                        .foregroundStyle(.white)
+                                }
+                                .padding(.vertical, 8)
+                                .padding(.horizontal, 16)
+                                .background(.backgroundBlue)
+                                .clipShape(Capsule())
+                            }
+                        }
                     }
                     // First Epi Dose & Time Since Shock
                     HStack {
