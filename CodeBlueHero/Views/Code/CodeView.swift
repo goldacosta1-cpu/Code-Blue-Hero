@@ -360,12 +360,8 @@ struct CodeView: View {
                     // recent events
                     List {
                         Section(isExpanded: $isRecentEventsExpanded) {
-                            Text("Code started")
-                                .font(.system(size: 12))
-                                .foregroundStyle(.textBlue700)
-                            Text("Code started")
-                                .font(.system(size: 12))
-                                .foregroundStyle(.textBlue700)
+                            RecentEventsRowView()
+                            RecentEventsRowView()
                         } header: {
                             HStack {
                                 Text("Recent Events")
