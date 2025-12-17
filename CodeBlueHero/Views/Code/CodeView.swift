@@ -424,6 +424,9 @@ struct CodeView: View {
                         }
                     }
                 }
+                .onAppear {
+                    // Save log code timer here
+                }
             }
             .background(.backgroundGray50)
         }
