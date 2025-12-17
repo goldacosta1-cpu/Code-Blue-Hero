@@ -15,6 +15,7 @@ struct CodeView: View {
     @State private var currentDate = Date.now
     @State private var timeElapsed = 0
     @State private var isRecentEventsExpanded = true
+    @State private var isCprStarted = false
     @State private var codeObservable = CodeObservable()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
@@ -29,52 +30,55 @@ struct CodeView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 16) {
-                    Text("CODE TIME")
-                        .font(.system(size: 12))
-                        .foregroundStyle(.textGray)
-                        .fontWeight(.semibold)
-                        .padding(.top, 32)
-                    Text(formattedTimerString)
-                        .font(.system(size: 40))
-                        .monospacedDigit()
-                        .bold()
-                    // Share Timer
-                    Button {
-                        
-                    } label: {
-                        HStack {
-                            Image(systemName: "square.and.arrow.up")
-                                .foregroundStyle(.white)
-                            Text("Share Timer")
-                                .foregroundStyle(.white)
+                    // Star of Code Time / CPR
+                    VStack(spacing: 16) {
+                        Text("CODE TIME")
+                            .font(.system(size: 12))
+                            .foregroundStyle(.textGray)
+                            .fontWeight(.semibold)
+                            .padding(.top, 32)
+                        Text(formattedTimerString)
+                            .font(.system(size: 40))
+                            .monospacedDigit()
+                            .bold()
+                        // Share Timer
+                        Button {
+                            
+                        } label: {
+                            HStack {
+                                Image(systemName: "square.and.arrow.up")
+                                    .foregroundStyle(.white)
+                                Text("Share Timer")
+                                    .foregroundStyle(.white)
+                            }
+                            .padding(.vertical, 12)
+                            .padding(.horizontal, 24)
+                            .background(.backgroundBlue)
+                            .clipShape(Capsule())
                         }
-                        .padding(.vertical, 12)
-                        .padding(.horizontal, 24)
-                        .background(.backgroundBlue)
-                        .clipShape(Capsule())
-                    }
-                    // Start CPR Cycle
-                    Button {
-                        
-                    } label: {
-                        VStack(spacing: 8) {
-                            Image(systemName: "timer.circle.fill")
-                                .resizable()
-                                .frame(width: 40, height: 40)
-                                .foregroundStyle(.white)
-                            Text("START CPR CYCLE")
-                                .font(.system(size: 24))
-                                .foregroundStyle(.white)
-                            Text("Tap to begin 2-minute timer")
-                                .font(.system(size: 14))
-                                .foregroundStyle(.white)
-                        }
-                        .frame(maxWidth: .infinity)
-                        .padding(24)
-                        .background(.backgroundGreen500)
-                        .clipShape(RoundedRectangle(cornerRadius: 24))
-                        .overlay {
-                            RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGreen600), lineWidth: 4)
+                        // Start CPR Cycle
+                        Button {
+                            isCprStarted = true
+                        } label: {
+                            VStack(spacing: 8) {
+                                Image(systemName: "timer.circle.fill")
+                                    .resizable()
+                                    .frame(width: 40, height: 40)
+                                    .foregroundStyle(.white)
+                                Text("START CPR CYCLE")
+                                    .font(.system(size: 24))
+                                    .foregroundStyle(.white)
+                                Text("Tap to begin 2-minute timer")
+                                    .font(.system(size: 14))
+                                    .foregroundStyle(.white)
+                            }
+                            .frame(maxWidth: .infinity)
+                            .padding(24)
+                            .background(.backgroundGreen500)
+                            .clipShape(RoundedRectangle(cornerRadius: 24))
+                            .overlay {
+                                RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGreen600), lineWidth: 4)
+                            }
                         }
                     }
                     // First Epi Dose & Time Since Shock
