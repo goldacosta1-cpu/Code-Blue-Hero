@@ -17,6 +17,8 @@ struct CodeView: View {
     @State private var isRecentEventsExpanded = true
     @State private var isCprStarted = false
     @State private var codeObservable = CodeObservable()
+    @State private var remainingSeconds = 120
+    private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
         let formatter = DateComponentsFormatter()
@@ -24,6 +26,13 @@ struct CodeView: View {
         formatter.unitsStyle = .positional
         formatter.zeroFormattingBehavior = .pad
         return formatter.string(from: TimeInterval(timeElapsed)) ?? "00:00"
+    }
+    private var formattedRemainingTimerString: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.minute, .second]
+        formatter.unitsStyle = .positional
+        formatter.zeroFormattingBehavior = .pad
+        return formatter.string(from: TimeInterval(remainingSeconds)) ?? "00:00"
     }
     
     var body: some View {
@@ -128,7 +137,7 @@ struct CodeView: View {
                                     .foregroundStyle(.backgroundBlue)
                                     .bold()
                             }
-                            Text("2:00")
+                            Text(formattedRemainingTimerString)
                                 .font(.system(size: 80))
                                 .foregroundStyle(.textGray900)
                                 .bold()
@@ -458,6 +467,13 @@ struct CodeView: View {
                 .padding(.horizontal, 16)
                 .onReceive(timer) { date in
                     timeElapsed = Int(date.timeIntervalSince(currentDate))
+                }
+                .onReceive(remainingTimer) { date in
+                    if isCprStarted {
+                        if remainingSeconds > 0 {
+                            remainingSeconds -= 1
+                        }
+                    }
                 }
                 .toolbar {
                     ToolbarItem(placement: .topBarTrailing) {
