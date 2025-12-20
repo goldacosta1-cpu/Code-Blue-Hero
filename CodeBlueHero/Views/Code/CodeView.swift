@@ -114,6 +114,23 @@ struct CodeView: View {
                                 .clipShape(Capsule())
                             }
                         }
+                        // CPR Cycle Timer
+                        VStack {
+                            HStack {
+                                Image(systemName: "timer.circle.fill")
+                                    .resizable()
+                                    .frame(width: 16, height: 16)
+                                    .foregroundStyle(.backgroundBlue)
+                                Text("CPR CYCLE TIMER")
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(.backgroundBlue)
+                                    .bold()
+                            }
+                            Text("2:00")
+                                .font(.system(size: 80))
+                                .foregroundStyle(.textGray900)
+                                .bold()
+                        }
                     }
                     // First Epi Dose & Time Since Shock
                     HStack {
