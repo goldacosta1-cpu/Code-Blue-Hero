@@ -60,7 +60,9 @@ struct CodeView: View {
                             }
                             // Start CPR Cycle
                             Button {
-                                isCprStarted = true
+                                withAnimation {
+                                    isCprStarted = true
+                                }
                             } label: {
                                 VStack(spacing: 8) {
                                     Image(systemName: "timer.circle.fill")
