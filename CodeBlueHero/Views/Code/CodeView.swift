@@ -139,7 +139,7 @@ struct CodeView: View {
                             }
                             Text(formattedRemainingTimerString)
                                 .font(.system(size: 80))
-                                .foregroundStyle(.textGray900)
+                                .foregroundStyle(remainingSeconds == 0 ? .textRed600 : remainingSeconds <= 30 ? .textAmber600 : .textGray900)
                                 .bold()
                             HStack {
                                 Circle()
