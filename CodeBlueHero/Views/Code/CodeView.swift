@@ -132,7 +132,18 @@ struct CodeView: View {
                                 .font(.system(size: 80))
                                 .foregroundStyle(.textGray900)
                                 .bold()
+                            HStack {
+                                Circle()
+                                    .fill(.backgroundGreen500)
+                                    .frame(width: 8, height: 8)
+                                    .padding(.trailing, 8)
+                                Text("Continue CPR • High quality compressions")
+                                    .font(.system(size: 14))
+                                    .foregroundStyle(.textGray600)
+                                    .fontWeight(.semibold)
+                            }
                         }
+                        .padding(.vertical, 16)
                     }
                     // First Epi Dose & Time Since Shock
                     HStack {
