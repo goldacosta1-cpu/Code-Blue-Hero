@@ -19,6 +19,7 @@ struct CodeView: View {
     @State private var codeObservable = CodeObservable()
     @State private var remainingSeconds = 120
     @State private var isVFSelected = false
+    @State private var isVTachSelected = false
     @State private var currentRhythmSelected = ""
     @State private var shockCount = 0
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -194,7 +195,7 @@ struct CodeView: View {
                         }
                     }
                     // Shock
-                    if isVFSelected {
+                    if isVFSelected || isVTachSelected {
                         VStack(spacing: 8) {
                             Image(systemName: "bolt.fill")
                                 .font(.system(size: 40))
@@ -267,7 +268,8 @@ struct CodeView: View {
                                     }
                             }
                             Button {
-                                
+                                isVTachSelected = true
+                                currentRhythmSelected = "VTach"
                             } label: {
                                 Text("VTach")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
