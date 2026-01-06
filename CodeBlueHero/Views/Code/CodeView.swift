@@ -19,6 +19,7 @@ struct CodeView: View {
     @State private var codeObservable = CodeObservable()
     @State private var remainingSeconds = 120
     @State private var isVFSelected = false
+    @State private var currentRhythmSelected = ""
     @State private var shockCount = 0
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -230,6 +231,18 @@ struct CodeView: View {
                             Text("RHYTHM CHECK")
                                 .font(.system(size: 14))
                                 .foregroundStyle(.textGray600)
+                            // Current rhythm label
+                            Spacer()
+                            if !currentRhythmSelected.isEmpty {
+                                Text("Current: \(currentRhythmSelected)")
+                                    .font(.system(size: 12))
+                                    .bold()
+                                    .foregroundStyle(.textGray700)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(.backgroundGray200)
+                                    .clipShape(Capsule())
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         Text("SHOCKABLE RHYTHMS")
@@ -240,6 +253,7 @@ struct CodeView: View {
                         HStack {
                             Button {
                                 isVFSelected = true
+                                currentRhythmSelected = "VF"
                             } label: {
                                 Text("VF")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
