@@ -193,30 +193,32 @@ struct CodeView: View {
                         }
                     }
                     // Shock
-                    VStack(spacing: 8) {
-                        Image(systemName: "bolt.fill")
-                            .font(.system(size: 40))
-                            .foregroundStyle(.backgroundOrange500)
-                        Text("Shock")
-                            .font(.system(size: 20))
-                            .bold()
-                            .foregroundStyle(.textOrange600)
-                        HStack(spacing: 8) {
-                            Text("\(shockCount) given •")
-                                .font(.system(size: 12))
-                                .foregroundStyle(.textGray500)
-                            Text("Next: #\(shockCount + 1)")
-                                .font(.system(size: 12))
+                    if isVFSelected {
+                        VStack(spacing: 8) {
+                            Image(systemName: "bolt.fill")
+                                .font(.system(size: 40))
+                                .foregroundStyle(.backgroundOrange500)
+                            Text("Shock")
+                                .font(.system(size: 20))
                                 .bold()
-                                .foregroundStyle(.textGray700)
+                                .foregroundStyle(.textOrange600)
+                            HStack(spacing: 8) {
+                                Text("\(shockCount) given •")
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(.textGray500)
+                                Text("Next: #\(shockCount + 1)")
+                                    .font(.system(size: 12))
+                                    .bold()
+                                    .foregroundStyle(.textGray700)
+                            }
                         }
-                    }
-                    .padding(24)
-                    .frame(maxWidth: .infinity)
-                    .background(.backgroundOrange50)
-                    .clipShape(RoundedRectangle(cornerRadius: 24))
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 24).stroke(Color(.borderOrange400), lineWidth: 2)
+                        .padding(24)
+                        .frame(maxWidth: .infinity)
+                        .background(.backgroundOrange50)
+                        .clipShape(RoundedRectangle(cornerRadius: 24))
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 24).stroke(Color(.borderOrange400), lineWidth: 2)
+                        }
                     }
                     // Rhythm Check
                     VStack(spacing: 10) {
@@ -237,7 +239,7 @@ struct CodeView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         HStack {
                             Button {
-                                
+                                isVFSelected = true
                             } label: {
                                 Text("VF")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
