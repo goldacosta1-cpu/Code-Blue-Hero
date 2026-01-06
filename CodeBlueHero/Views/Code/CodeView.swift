@@ -18,6 +18,7 @@ struct CodeView: View {
     @State private var isCprStarted = false
     @State private var codeObservable = CodeObservable()
     @State private var remainingSeconds = 120
+    @State private var isVFSelected = false
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
@@ -189,6 +190,19 @@ struct CodeView: View {
                         .overlay {
                             RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
                         }
+                    }
+                    // Shock
+                    VStack {
+                        Image(systemName: "bolt.fill")
+                            .font(.system(size: 40))
+                            .foregroundStyle(.backgroundOrange500)
+                    }
+                    .padding(24)
+                    .frame(maxWidth: .infinity)
+                    .background(.backgroundOrange50)
+                    .clipShape(RoundedRectangle(cornerRadius: 24))
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 24).stroke(Color(.borderOrange400), lineWidth: 2)
                     }
                     // Rhythm Check
                     VStack(spacing: 10) {
