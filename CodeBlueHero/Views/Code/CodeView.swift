@@ -19,6 +19,7 @@ struct CodeView: View {
     @State private var codeObservable = CodeObservable()
     @State private var remainingSeconds = 120
     @State private var isVFSelected = false
+    @State private var shockCount = 0
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
@@ -192,10 +193,23 @@ struct CodeView: View {
                         }
                     }
                     // Shock
-                    VStack {
+                    VStack(spacing: 8) {
                         Image(systemName: "bolt.fill")
                             .font(.system(size: 40))
                             .foregroundStyle(.backgroundOrange500)
+                        Text("Shock")
+                            .font(.system(size: 20))
+                            .bold()
+                            .foregroundStyle(.textOrange600)
+                        HStack(spacing: 8) {
+                            Text("\(shockCount) given •")
+                                .font(.system(size: 12))
+                                .foregroundStyle(.textGray500)
+                            Text("Next: #\(shockCount + 1)")
+                                .font(.system(size: 12))
+                                .bold()
+                                .foregroundStyle(.textGray700)
+                        }
                     }
                     .padding(24)
                     .frame(maxWidth: .infinity)
