@@ -23,6 +23,7 @@ struct CodeView: View {
     @State private var currentRhythmSelected = ""
     @State private var currentNonShockableRhythmSelected = ""
     @State private var shockCount = 0
+    @State private var promptEpi = false
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
@@ -168,15 +169,22 @@ struct CodeView: View {
                             Text("FIRST EPI DOSE")
                                 .foregroundStyle(.textGray)
                                 .font(.system(size: 12))
-                            Text("Not Due Yet")
-                                .font(.system(size: 18))
-                                .foregroundStyle(.textGray)
+                            if promptEpi {
+                                Text("Tap to give")
+                                    .font(.system(size: 12))
+                                    .foregroundStyle(.textRed600)
+                            } else {
+                                Text("Not Due Yet")
+                                    .font(.system(size: 18))
+                                    .foregroundStyle(.textGray)
+                            }
                         }
                         .frame(maxWidth: .infinity, minHeight: 100, maxHeight: 100)
+                        .background(promptEpi ? .backgroundRed50 : .backgroundGray50)
                         .padding(16)
                         .clipShape(RoundedRectangle(cornerRadius: 24))
                         .overlay {
-                            RoundedRectangle(cornerRadius: 24).stroke(Color(.borderGray300), lineWidth: 2)
+                            RoundedRectangle(cornerRadius: 24).stroke(promptEpi ? Color(.borderRed400) : Color(.borderGray300), lineWidth: 2)
                         }
                         VStack {
                             VStack(spacing: 8) {
@@ -570,6 +578,11 @@ struct CodeView: View {
                 }
             }
             .background(.backgroundGray50)
+            .task(id: currentNonShockableRhythmSelected) {
+                if !currentNonShockableRhythmSelected.isEmpty {
+                    promptEpi = true
+                }
+            }
         }
     }
 }
