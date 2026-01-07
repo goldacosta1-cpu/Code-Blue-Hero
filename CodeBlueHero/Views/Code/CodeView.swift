@@ -21,6 +21,7 @@ struct CodeView: View {
     @State private var isVFSelected = false
     @State private var isVTachSelected = false
     @State private var currentRhythmSelected = ""
+    @State private var currentNonShockableRhythmSelected = ""
     @State private var shockCount = 0
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -244,6 +245,16 @@ struct CodeView: View {
                                     .background(.backgroundGray200)
                                     .clipShape(Capsule())
                             }
+                            if !currentNonShockableRhythmSelected.isEmpty {
+                                Text("Current: \(currentNonShockableRhythmSelected)")
+                                    .font(.system(size: 12))
+                                    .bold()
+                                    .foregroundStyle(.textGray700)
+                                    .padding(.horizontal, 8)
+                                    .padding(.vertical, 4)
+                                    .background(.backgroundGray200)
+                                    .clipShape(Capsule())
+                            }
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         Text("SHOCKABLE RHYTHMS")
@@ -290,7 +301,7 @@ struct CodeView: View {
                             .frame(maxWidth: .infinity, alignment: .leading)
                         HStack {
                             Button {
-                                
+                                currentNonShockableRhythmSelected = "PEA"
                             } label: {
                                 Text("PEA")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
@@ -304,7 +315,7 @@ struct CodeView: View {
                                     }
                             }
                             Button {
-                                
+                                currentNonShockableRhythmSelected = "Asystole"
                             } label: {
                                 Text("Asystole")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
