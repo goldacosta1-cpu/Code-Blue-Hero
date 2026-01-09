@@ -24,6 +24,7 @@ struct CodeView: View {
     @State private var currentNonShockableRhythmSelected = ""
     @State private var shockCount = 0
     @State private var promptEpi = false
+    @State private var isPresentShock = false
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
@@ -229,6 +230,9 @@ struct CodeView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 24))
                         .overlay {
                             RoundedRectangle(cornerRadius: 24).stroke(Color(.borderOrange400), lineWidth: 2)
+                        }
+                        .onTapGesture {
+                            isPresentShock = true
                         }
                     }
                     // Rhythm Check
@@ -582,6 +586,9 @@ struct CodeView: View {
                 if !currentNonShockableRhythmSelected.isEmpty {
                     promptEpi = true
                 }
+            }
+            .sheet(isPresented: $isPresentShock) {
+                ShockView()
             }
         }
     }
