@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ShockView: View {
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack {
+            Image(systemName: "bolt.fill")
+                .font(.system(size: 40))
+                .foregroundStyle(.backgroundOrange500)
+            Text("Shock")
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
