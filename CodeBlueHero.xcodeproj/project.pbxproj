@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 77;
+	objectVersion = 90;
 	objects = {
 
 /* Begin PBXContainerItemProxy section */
@@ -63,24 +63,18 @@
 /* Begin PBXFrameworksBuildPhase section */
 		862D2F6E2EE15B8800825552 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D2F7B2EE15B8A00825552 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D2F852EE15B8A00825552 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
@@ -118,14 +112,10 @@
 			);
 			buildRules = (
 			);
-			dependencies = (
-			);
 			fileSystemSynchronizedGroups = (
 				862D2F732EE15B8800825552 /* CodeBlueHero */,
 			);
 			name = CodeBlueHero;
-			packageProductDependencies = (
-			);
 			productName = CodeBlueHero;
 			productReference = 862D2F712EE15B8800825552 /* CodeBlueHero.app */;
 			productType = "com.apple.product-type.application";
@@ -147,8 +137,6 @@
 				862D2F812EE15B8A00825552 /* CodeBlueHeroTests */,
 			);
 			name = CodeBlueHeroTests;
-			packageProductDependencies = (
-			);
 			productName = CodeBlueHeroTests;
 			productReference = 862D2F7E2EE15B8A00825552 /* CodeBlueHeroTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -170,8 +158,6 @@
 				862D2F8B2EE15B8A00825552 /* CodeBlueHeroUITests */,
 			);
 			name = CodeBlueHeroUITests;
-			packageProductDependencies = (
-			);
 			productName = CodeBlueHeroUITests;
 			productReference = 862D2F882EE15B8A00825552 /* CodeBlueHeroUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
@@ -208,7 +194,7 @@
 			);
 			mainGroup = 862D2F682EE15B8800825552;
 			minimizedProjectReferenceProxies = 1;
-			preferredProjectObjectVersion = 77;
+			preferredProjectObjectVersion = 90;
 			productRefGroup = 862D2F722EE15B8800825552 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -223,48 +209,36 @@
 /* Begin PBXResourcesBuildPhase section */
 		862D2F6F2EE15B8800825552 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D2F7C2EE15B8A00825552 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D2F862EE15B8A00825552 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		862D2F6D2EE15B8800825552 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D2F7A2EE15B8A00825552 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 		862D2F842EE15B8A00825552 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
 			files = (
 			);
-			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
@@ -282,7 +256,7 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		862D2F902EE15B8A00825552 /* Debug */ = {
+		862D2F902EE15B8A00825552 /* Debug configuration for PBXProject "CodeBlueHero" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -346,7 +320,7 @@
 			};
 			name = Debug;
 		};
-		862D2F912EE15B8A00825552 /* Release */ = {
+		862D2F912EE15B8A00825552 /* Release configuration for PBXProject "CodeBlueHero" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -403,7 +377,7 @@
 			};
 			name = Release;
 		};
-		862D2F932EE15B8A00825552 /* Debug */ = {
+		862D2F932EE15B8A00825552 /* Debug configuration for PBXNativeTarget "CodeBlueHero" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -435,7 +409,7 @@
 			};
 			name = Debug;
 		};
-		862D2F942EE15B8A00825552 /* Release */ = {
+		862D2F942EE15B8A00825552 /* Release configuration for PBXNativeTarget "CodeBlueHero" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -467,7 +441,7 @@
 			};
 			name = Release;
 		};
-		862D2F962EE15B8A00825552 /* Debug */ = {
+		862D2F962EE15B8A00825552 /* Debug configuration for PBXNativeTarget "CodeBlueHeroTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -488,7 +462,7 @@
 			};
 			name = Debug;
 		};
-		862D2F972EE15B8A00825552 /* Release */ = {
+		862D2F972EE15B8A00825552 /* Release configuration for PBXNativeTarget "CodeBlueHeroTests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,7 +483,7 @@
 			};
 			name = Release;
 		};
-		862D2F992EE15B8A00825552 /* Debug */ = {
+		862D2F992EE15B8A00825552 /* Debug configuration for PBXNativeTarget "CodeBlueHeroUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -528,7 +502,7 @@
 			};
 			name = Debug;
 		};
-		862D2F9A2EE15B8A00825552 /* Release */ = {
+		862D2F9A2EE15B8A00825552 /* Release configuration for PBXNativeTarget "CodeBlueHeroUITests" */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
@@ -553,37 +527,33 @@
 		862D2F6C2EE15B8800825552 /* Build configuration list for PBXProject "CodeBlueHero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				862D2F902EE15B8A00825552 /* Debug */,
-				862D2F912EE15B8A00825552 /* Release */,
+				862D2F902EE15B8A00825552 /* Debug configuration for PBXProject "CodeBlueHero" */,
+				862D2F912EE15B8A00825552 /* Release configuration for PBXProject "CodeBlueHero" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		862D2F922EE15B8A00825552 /* Build configuration list for PBXNativeTarget "CodeBlueHero" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				862D2F932EE15B8A00825552 /* Debug */,
-				862D2F942EE15B8A00825552 /* Release */,
+				862D2F932EE15B8A00825552 /* Debug configuration for PBXNativeTarget "CodeBlueHero" */,
+				862D2F942EE15B8A00825552 /* Release configuration for PBXNativeTarget "CodeBlueHero" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		862D2F952EE15B8A00825552 /* Build configuration list for PBXNativeTarget "CodeBlueHeroTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				862D2F962EE15B8A00825552 /* Debug */,
-				862D2F972EE15B8A00825552 /* Release */,
+				862D2F962EE15B8A00825552 /* Debug configuration for PBXNativeTarget "CodeBlueHeroTests" */,
+				862D2F972EE15B8A00825552 /* Release configuration for PBXNativeTarget "CodeBlueHeroTests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 		862D2F982EE15B8A00825552 /* Build configuration list for PBXNativeTarget "CodeBlueHeroUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				862D2F992EE15B8A00825552 /* Debug */,
-				862D2F9A2EE15B8A00825552 /* Release */,
+				862D2F992EE15B8A00825552 /* Debug configuration for PBXNativeTarget "CodeBlueHeroUITests" */,
+				862D2F9A2EE15B8A00825552 /* Release configuration for PBXNativeTarget "CodeBlueHeroUITests" */,
 			);
-			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
