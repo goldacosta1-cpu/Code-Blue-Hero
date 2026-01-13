@@ -14,7 +14,11 @@ struct ShockView: View {
             Image(systemName: "bolt.fill")
                 .font(.system(size: 40))
                 .foregroundStyle(.backgroundOrange500)
+                .padding()
+                .background(Circle()
+                    .fill(Color(.backgroundOrange50)))
             Text("Shock")
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
