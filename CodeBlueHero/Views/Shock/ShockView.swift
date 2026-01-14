@@ -47,9 +47,21 @@ struct ShockView: View {
                 }
             }
             .padding(.top, 12)
+            .padding(.bottom, 24)
+            Text("Select energy level for defibrillation")
+                .font(.system(size: 14))
+                .foregroundStyle(.textGray500)
+                .padding(.bottom, 24)
+            Text("Biphasic (Recommended)")
+                .foregroundStyle(.textOrange600)
+                .font(.system(size: 12))
+                .bold()
+                .textCase(.uppercase)
+                .frame(maxWidth: .infinity, alignment: .leading)
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .padding(.horizontal, 32)
     }
 }
 
