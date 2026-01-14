@@ -124,6 +124,18 @@ struct ShockView: View {
                     )
             }
             Spacer()
+            Button {
+                
+            } label: {
+                Text("Cancel")
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .foregroundStyle(.white)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16).fill(.backgroundRed500)
+                    )
+                    .padding(.bottom, 16)
+            }
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .padding(.horizontal, 32)
