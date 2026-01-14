@@ -588,7 +588,7 @@ struct CodeView: View {
                 }
             }
             .sheet(isPresented: $isPresentShock) {
-                ShockView()
+                ShockView(isPresentShock: $isPresentShock)
             }
         }
     }

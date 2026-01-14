@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ShockView: View {
     
+    @Binding var isPresentShock: Bool
+    
     var body: some View {
         VStack {
             Image(systemName: "bolt.fill")
@@ -125,7 +127,7 @@ struct ShockView: View {
             }
             Spacer()
             Button {
-                
+                isPresentShock = false
             } label: {
                 Text("Cancel")
                     .padding(20)
@@ -143,5 +145,5 @@ struct ShockView: View {
 }
 
 #Preview {
-    ShockView()
+    ShockView(isPresentShock: .constant(true))
 }
