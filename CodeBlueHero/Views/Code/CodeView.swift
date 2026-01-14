@@ -278,6 +278,7 @@ struct CodeView: View {
                             Button {
                                 isVFSelected = true
                                 currentRhythmSelected = "VF"
+                                shockCount += 1
                             } label: {
                                 Text("VF")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
@@ -293,6 +294,7 @@ struct CodeView: View {
                             Button {
                                 isVTachSelected = true
                                 currentRhythmSelected = "VTach"
+                                shockCount += 1
                             } label: {
                                 Text("VTach")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
