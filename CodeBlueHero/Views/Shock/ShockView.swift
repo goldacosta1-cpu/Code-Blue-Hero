@@ -58,6 +58,20 @@ struct ShockView: View {
                 .bold()
                 .textCase(.uppercase)
                 .frame(maxWidth: .infinity, alignment: .leading)
+            Button {
+                
+            } label: {
+                Text("120J Biphasic")
+                    .font(.system(size: 24))
+                    .bold()
+                    .foregroundStyle(.textGray700)
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16).fill(.backgroundGray50)
+                            .stroke(Color(.borderGray200), lineWidth: 2)
+                    )
+            }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
