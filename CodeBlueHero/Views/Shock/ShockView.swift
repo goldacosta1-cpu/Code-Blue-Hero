@@ -101,6 +101,28 @@ struct ShockView: View {
                             .stroke(Color(.borderGray200), lineWidth: 2)
                     )
             }
+            Text("Monophasic")
+                .foregroundStyle(.textGray500)
+                .font(.system(size: 12))
+                .bold()
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .textCase(.uppercase)
+                .padding(.top, 8)
+                .padding(.bottom, 4)
+            Button {
+                
+            } label: {
+                Text("360 J \n\(Text("Monophasic").foregroundStyle(.textGray500).font(.system(size: 12)))")
+                    .font(.system(size: 24))
+                    .bold()
+                    .foregroundStyle(.textGray700)
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16).fill(.backgroundGray50)
+                            .stroke(Color(.borderGray200), lineWidth: 2)
+                    )
+            }
             Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
