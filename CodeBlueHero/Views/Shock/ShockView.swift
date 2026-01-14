@@ -58,10 +58,39 @@ struct ShockView: View {
                 .bold()
                 .textCase(.uppercase)
                 .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.bottom, 4)
             Button {
                 
             } label: {
-                Text("120J Biphasic")
+                Text("120 J \n\(Text("Biphasic").foregroundStyle(.textGray500).font(.system(size: 12)))")
+                    .font(.system(size: 24))
+                    .bold()
+                    .foregroundStyle(.textGray700)
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16).fill(.backgroundGray50)
+                            .stroke(Color(.borderGray200), lineWidth: 2)
+                    )
+            }
+            Button {
+                
+            } label: {
+                Text("150 J \n\(Text("Biphasic").foregroundStyle(.textGray500).font(.system(size: 12)))")
+                    .font(.system(size: 24))
+                    .bold()
+                    .foregroundStyle(.textGray700)
+                    .padding(20)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16).fill(.backgroundGray50)
+                            .stroke(Color(.borderGray200), lineWidth: 2)
+                    )
+            }
+            Button {
+                
+            } label: {
+                Text("200 J \n\(Text("Biphasic (Standard)").foregroundStyle(.textGray500).font(.system(size: 12)))")
                     .font(.system(size: 24))
                     .bold()
                     .foregroundStyle(.textGray700)
