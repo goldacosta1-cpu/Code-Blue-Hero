@@ -10,6 +10,7 @@ import SwiftUI
 struct ShockView: View {
     
     @Binding var isPresentShock: Bool
+    @Binding var shockCount: Int
     
     var body: some View {
         VStack {
@@ -27,7 +28,7 @@ struct ShockView: View {
                 Button {
                     
                 } label: {
-                    Text("Shocks Given:")
+                    Text("\(shockCount) given •")
                         .font(.system(size: 12))
                         .foregroundStyle(.textGray600)
                         .fontWeight(.semibold)
@@ -39,7 +40,7 @@ struct ShockView: View {
                 Button {
                     
                 } label: {
-                    Text("Next: Shock:")
+                    Text("Next: #\(shockCount + 1)")
                         .foregroundStyle(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
@@ -145,5 +146,5 @@ struct ShockView: View {
 }
 
 #Preview {
-    ShockView(isPresentShock: .constant(true))
+    ShockView(isPresentShock: .constant(true), shockCount: .constant(1))
 }
