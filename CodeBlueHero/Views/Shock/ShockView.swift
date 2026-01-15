@@ -197,11 +197,18 @@ struct ShockView: View {
             } else if shockStep == .clearPatient {
                 VStack {
                     HStack {
+                        Image(systemName: "checkmark.circle.fill")
+                            .font(.system(size: 20))
+                            .foregroundStyle(.backgroundGreen600)
                         Text("Team Clear")
                             .foregroundStyle(.textGreen700)
                             .bold()
                     }
                     .frame(maxWidth: .infinity)
+                    .padding(.bottom, 8)
+                    Text("Ready to deliver \(shockSelected)")
+                        .font(.system(size: 14))
+                        .foregroundStyle(.textGreen700)
                 }
                 .padding(20)
                 .background(
