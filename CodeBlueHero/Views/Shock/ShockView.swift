@@ -217,6 +217,35 @@ struct ShockView: View {
                         .stroke(Color(.borderGreen200), lineWidth: 1)
                 )
                 .padding(.bottom, 24)
+                Button {
+                    
+                } label: {
+                    VStack {
+                        HStack(spacing: 8) {
+                            Image(systemName: "bolt.fill")
+                                .font(.system(size: 28))
+                                .foregroundStyle(.white)
+                            Text("SHOCK")
+                                .font(.system(size: 30))
+                                .foregroundStyle(.white)
+                                .bold()
+                            Image(systemName: "bolt.fill")
+                                .font(.system(size: 28))
+                                .foregroundStyle(.white)
+                        }
+                        .padding(.bottom, 4)
+                        Text("Step 2: Confirm patient and bed are clear - Press to proceed")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.textRed100)
+                    }
+                    .padding(.vertical, 24)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(.backgroundRed600)
+                    )
+                    .padding(.bottom, 16)
+                }
             }
             Spacer()
             Button {
