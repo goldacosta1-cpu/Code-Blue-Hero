@@ -213,5 +213,5 @@ struct ShockView: View {
 }
 
 #Preview {
-    ShockView(isPresentShock: .constant(true), shockCount: .constant(1))
+    ShockView(isPresentShock: .constant(true), shockCount: .constant(0))
 }
