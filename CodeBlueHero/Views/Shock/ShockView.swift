@@ -151,15 +151,24 @@ struct ShockView: View {
                 // Team Clear
                 VStack {
                     HStack {
+                        Image(systemName: "bolt.fill")
+                            .font(.system(size: 20))
+                            .foregroundStyle(.backgroundOrange500)
                         Text("\(shockSelected) Selected")
+                            .foregroundStyle(.textOrange600)
+                            .bold()
                     }
                     .frame(maxWidth: .infinity)
+                    .padding(.bottom, 8)
+                    Text("Charging defibrillator...")
+                        .foregroundStyle(.textOrange600)
+                        .font(.system(size: 14))
                 }
                 .padding(20)
                 .background(
                     RoundedRectangle(cornerRadius: 16)
                         .fill(.backgroundOrange50)
-                        .stroke(Color(.backgroundOrange500), lineWidth: 1)
+                        .stroke(Color(.backgroundOrange200), lineWidth: 1)
                 )
                 .padding(.bottom, 24)
             }
