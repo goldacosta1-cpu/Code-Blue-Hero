@@ -17,7 +17,7 @@ struct ShockView: View {
     
     @Binding var isPresentShock: Bool
     @Binding var shockCount: Int
-    @State private var shockStep: ShockSteps = .clearTeam
+    @State private var shockStep: ShockSteps = .clearPatient
     @State private var shockSelected = ""
     
     var body: some View {
@@ -195,7 +195,21 @@ struct ShockView: View {
                     .padding(.bottom, 16)
                 }
             } else if shockStep == .clearPatient {
-                
+                VStack {
+                    HStack {
+                        Text("Team Clear")
+                            .foregroundStyle(.textGreen700)
+                            .bold()
+                    }
+                    .frame(maxWidth: .infinity)
+                }
+                .padding(20)
+                .background(
+                    RoundedRectangle(cornerRadius: 16)
+                        .fill(.backgroundGreen50)
+                        .stroke(Color(.borderGreen200), lineWidth: 1)
+                )
+                .padding(.bottom, 24)
             }
             Spacer()
             Button {
