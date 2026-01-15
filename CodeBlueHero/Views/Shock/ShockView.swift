@@ -148,7 +148,6 @@ struct ShockView: View {
                         )
                 }
             } else if shockStep == .clearTeam {
-                // Team Clear
                 VStack {
                     HStack {
                         Image(systemName: "bolt.fill")
@@ -171,6 +170,28 @@ struct ShockView: View {
                         .stroke(Color(.backgroundOrange200), lineWidth: 1)
                 )
                 .padding(.bottom, 24)
+                // Clear Team
+                Button {
+                    
+                } label: {
+                    VStack {
+                        Text("CLEAR TEAM")
+                            .foregroundStyle(.white)
+                            .font(.system(size: 24))
+                            .bold()
+                        Text("Step 1: Confirm all team members are clear")
+                            .font(.system(size: 14))
+                            .foregroundStyle(.textBlue100)
+                            .padding(.top, 8)
+                    }
+                    .padding(.vertical, 24)
+                    .frame(maxWidth: .infinity)
+                    .background(
+                        RoundedRectangle(cornerRadius: 16)
+                            .fill(.backgroundBlue)
+                    )
+                    .padding(.bottom, 16)
+                }
             }
             Spacer()
             Button {
