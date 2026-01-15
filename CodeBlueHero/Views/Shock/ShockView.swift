@@ -17,7 +17,7 @@ struct ShockView: View {
     
     @Binding var isPresentShock: Bool
     @Binding var shockCount: Int
-    @State private var shockStep: ShockSteps = .clearPatient
+    @State private var shockStep: ShockSteps = .select
     @State private var shockSelected = ""
     
     var body: some View {
