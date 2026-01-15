@@ -172,7 +172,9 @@ struct ShockView: View {
                 .padding(.bottom, 24)
                 // Clear Team
                 Button {
-                    
+                    withAnimation {
+                        shockStep = .clearPatient
+                    }
                 } label: {
                     VStack {
                         Text("CLEAR TEAM")
@@ -192,6 +194,8 @@ struct ShockView: View {
                     )
                     .padding(.bottom, 16)
                 }
+            } else if shockStep == .clearPatient {
+                
             }
             Spacer()
             Button {
