@@ -11,6 +11,8 @@ import SwiftData
 @Observable
 class CodeObservable {
     
+    var shockCount = 0
+    
     enum CprStatus: String {
         case started = "INITIAL ACTIONS:\n\n• Begin bag-mask ventilation and give oxygen\n• Attach monitor/defibrillator\n• Ensure high-quality CPR is ready to begin\n\nOnce ready, start CPR and assess initial rhythm at 2-minute mark."
     }

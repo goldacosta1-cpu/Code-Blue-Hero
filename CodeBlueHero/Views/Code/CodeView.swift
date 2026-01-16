@@ -22,7 +22,6 @@ struct CodeView: View {
     @State private var isVTachSelected = false
     @State private var currentRhythmSelected = ""
     @State private var currentNonShockableRhythmSelected = ""
-    @State private var shockCount = 0
     @State private var promptEpi = false
     @State private var isPresentShock = false
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
@@ -215,10 +214,10 @@ struct CodeView: View {
                                 .bold()
                                 .foregroundStyle(.textOrange600)
                             HStack(spacing: 8) {
-                                Text("\(shockCount) given •")
+                                Text("\(codeObservable.shockCount) given •")
                                     .font(.system(size: 12))
                                     .foregroundStyle(.textGray500)
-                                Text("Next: #\(shockCount + 1)")
+                                Text("Next: #\(codeObservable.shockCount + 1)")
                                     .font(.system(size: 12))
                                     .bold()
                                     .foregroundStyle(.textGray700)
@@ -278,7 +277,6 @@ struct CodeView: View {
                             Button {
                                 isVFSelected = true
                                 currentRhythmSelected = "VF"
-                                shockCount += 1
                             } label: {
                                 Text("VF")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
@@ -294,7 +292,6 @@ struct CodeView: View {
                             Button {
                                 isVTachSelected = true
                                 currentRhythmSelected = "VTach"
-                                shockCount += 1
                             } label: {
                                 Text("VTach")
                                     .frame(maxWidth: .infinity, minHeight: 44, maxHeight: 44)
@@ -590,7 +587,7 @@ struct CodeView: View {
                 }
             }
             .sheet(isPresented: $isPresentShock) {
-                ShockView(isPresentShock: $isPresentShock, shockCount: $shockCount)
+                ShockView(isPresentShock: $isPresentShock)
             }
         }
     }

@@ -15,8 +15,8 @@ enum ShockSteps {
 
 struct ShockView: View {
     
+    @Environment(CodeObservable.self) private var codeObservable
     @Binding var isPresentShock: Bool
-    @Binding var shockCount: Int
     @State private var shockStep: ShockSteps = .select
     @State private var shockSelected = ""
     
@@ -36,7 +36,7 @@ struct ShockView: View {
                 Button {
                     
                 } label: {
-                    Text("\(shockCount) given •")
+                    Text("\(codeObservable.shockCount) given •")
                         .font(.system(size: 12))
                         .foregroundStyle(.textGray600)
                         .fontWeight(.semibold)
@@ -48,7 +48,7 @@ struct ShockView: View {
                 Button {
                     
                 } label: {
-                    Text("Next: #\(shockCount + 1)")
+                    Text("Next: #\(codeObservable.shockCount + 1)")
                         .foregroundStyle(.white)
                         .padding(.horizontal, 16)
                         .padding(.vertical, 8)
@@ -219,6 +219,7 @@ struct ShockView: View {
                 .padding(.bottom, 24)
                 Button {
                     isPresentShock = false
+                    codeObservable.shockCount += 1
                 } label: {
                     VStack {
                         HStack(spacing: 8) {
@@ -267,5 +268,5 @@ struct ShockView: View {
 }
 
 #Preview {
-    ShockView(isPresentShock: .constant(true), shockCount: .constant(0))
+    ShockView(isPresentShock: .constant(true))
 }
