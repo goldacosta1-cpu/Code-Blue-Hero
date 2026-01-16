@@ -588,6 +588,7 @@ struct CodeView: View {
             }
             .sheet(isPresented: $isPresentShock) {
                 ShockView(isPresentShock: $isPresentShock)
+                    .environment(codeObservable)
             }
         }
     }
