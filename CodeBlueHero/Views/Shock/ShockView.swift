@@ -218,7 +218,7 @@ struct ShockView: View {
                 )
                 .padding(.bottom, 24)
                 Button {
-                    
+                    isPresentShock = false
                 } label: {
                     VStack {
                         HStack(spacing: 8) {
