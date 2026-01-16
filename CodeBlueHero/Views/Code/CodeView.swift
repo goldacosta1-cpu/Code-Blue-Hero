@@ -14,8 +14,10 @@ struct CodeView: View {
     @Query private var codeLog: [CodeLog]
     @State private var currentDate = Date.now
     @State private var timeElapsed = 0
+    @State private var timeElapsedSinceShock = 0
     @State private var isRecentEventsExpanded = true
     @State private var isCprStarted = false
+    @State private var isShockTimerStarted = false
     @State private var codeObservable = CodeObservable()
     @State private var remainingSeconds = 120
     @State private var isVFSelected = false
@@ -26,6 +28,7 @@ struct CodeView: View {
     @State private var isPresentShock = false
     private let remainingTimer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    private let timerSinceShock = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     private var formattedTimerString: String {
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.minute, .second]
@@ -39,6 +42,13 @@ struct CodeView: View {
         formatter.unitsStyle = .positional
         formatter.zeroFormattingBehavior = .pad
         return formatter.string(from: TimeInterval(remainingSeconds)) ?? "00:00"
+    }
+    private var formattedTimerSinceShockString: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.minute, .second]
+        formatter.unitsStyle = .positional
+        formatter.zeroFormattingBehavior = .pad
+        return formatter.string(from: TimeInterval(timeElapsedSinceShock)) ?? "00:00"
     }
     
     var body: some View {
@@ -536,6 +546,11 @@ struct CodeView: View {
                 .onReceive(timer) { date in
                     timeElapsed = Int(date.timeIntervalSince(currentDate))
                 }
+                .onReceive(timerSinceShock) { date in
+                    if isShockTimerStarted {
+                        timeElapsedSinceShock = Int(date.timeIntervalSince(currentDate))
+                    }
+                }
                 .onReceive(remainingTimer) { date in
                     if isCprStarted {
                         if remainingSeconds > 0 {
@@ -585,6 +600,9 @@ struct CodeView: View {
                 if !currentNonShockableRhythmSelected.isEmpty {
                     promptEpi = true
                 }
+            }
+            .task(id: codeObservable.shockCount) {
+                // Start timer elapse of time since shock
             }
             .sheet(isPresented: $isPresentShock) {
                 ShockView(isPresentShock: $isPresentShock)
