@@ -603,6 +603,7 @@ struct CodeView: View {
             }
             .task(id: codeObservable.shockCount) {
                 // Start timer elapse of time since shock
+                isShockTimerStarted = true
             }
             .sheet(isPresented: $isPresentShock) {
                 ShockView(isPresentShock: $isPresentShock)
